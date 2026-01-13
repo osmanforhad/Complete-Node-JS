@@ -1,0 +1,4 @@
+Printers in the 1500s scrambled the words from Cicero's "De Finibus Bonorum et Malorum'' 
+after mixing the words in each sentence. The familiar "lorem ipsum dolor sit amet" text 
+emerged when 16th-century printers adapted Cicero's original work, beginning with the phrase 
+"dolor sit amet consectetur."
