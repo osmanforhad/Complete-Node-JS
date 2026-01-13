@@ -6,13 +6,13 @@ const html = fs.readFileSync("./Template/index.html", "utf-8");
 const app = http.createServer((request, response) => {
   let path = request.url;
   if (path === "/" || path.toLocaleLowerCase() === "/home") {
-    response.end("You are in home page");
+    response.end(html.replace("{{%CONTENT%}}", "You are in Home page"));
   } else if (path.toLocaleLowerCase() === "/about") {
-    response.end("You are in about page");
+    response.end(html.replace("{{%CONTENT%}}", "You are in About page"));
   } else if (path.toLocaleLowerCase() === "/contact") {
-    response.end("You are in contact page");
+    response.end(html.replace("{{%CONTENT%}}", "You are in Contact page"));
   } else {
-    response.end("Error 404: page not found");
+    response.end(html.replace("{{%CONTENT%}}", "Error 404: Page not found"));
   }
 });
 
