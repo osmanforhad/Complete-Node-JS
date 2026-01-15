@@ -14,7 +14,9 @@ let productDetailHtml = fs.readFileSync(
   "utf-8"
 );
 
-const app = http.createServer((request, response) => {
+//EVENT DRIVEN ARCHITECTURE
+const app = http.createServer();
+app.on("request", (request, response) => {
   let { query, pathname: path } = url.parse(request.url, true);
   if (path === "/" || path.toLocaleLowerCase() === "/home") {
     response.writeHead(200, {
