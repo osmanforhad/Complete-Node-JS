@@ -4,7 +4,6 @@ const http = require("http");
 const url = require("url");
 //USER DEFINED MODULES
 const replaceHtml = require("./Modules/replaceHtml");
-const user = require("./Modules/user");
 //THIRD PARTY MODULES
 
 const html = fs.readFileSync("./Template/index.html", "utf-8");
@@ -67,16 +66,3 @@ app.on("request", (request, response) => {
 app.listen(8000, "127.0.0.1", () => {
   console.log("Server Started!");
 });
-
-//EMITTING & HANDALING CUSTOM EVENTS
-let myEmitter = new user();
-
-myEmitter.on("userCreated", (id, name) => {
-  console.log(`A new user ${name} with ID ${id} is created`);
-});
-
-myEmitter.on("userCreated", (id, name) => {
-  console.log(`A new user ${name} with ID ${id} is added to database`);
-});
-
-myEmitter.emit("userCreated", "101", "Jhon");
